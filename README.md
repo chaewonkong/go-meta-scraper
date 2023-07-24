@@ -1,4 +1,4 @@
-# thumbnail-scraper
+# 👍 thumbnail-scraper
 
 Simple thumbnail-scraper in Go with surf and goquery.
 
