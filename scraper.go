@@ -33,30 +33,47 @@ func (th *ThumbnailScraper) GetThumbnailImages() (images []Image, err error) {
 	if err != nil {
 		return
 	}
-	th.Bow.Dom().Find("meta").Each(th.getOpenGraphImageFromMetaProperty)
+
+	th.getOpenGraphImageFromMetaProperty()
+
+	if len(th.Images) == 0 {
+		th.getAnyImageFromImgTag()
+	}
 
 	if len(th.Images) == 0 {
 		err = NewImgNotFoundError()
 		return
 	}
 
-	// TODO: get any images if og:image not available
-
 	images = th.Images
 
 	return
 }
 
-// get og:image content from site meta
-func (th *ThumbnailScraper) getOpenGraphImageFromMetaProperty(_ int, s *goquery.Selection) {
-	if result, available := s.Attr("property"); available && result == srctype.OG {
-		imgURL, available := s.Attr("content")
-		if available {
+func (th *ThumbnailScraper) getAnyImageFromImgTag() {
+	th.Bow.Dom().Find("img.src").Each(func(i int, s *goquery.Selection) {
+		if result, ok := s.Attr("src"); ok {
 			image := Image{
-				Url:     imgURL,
-				SrcType: srctype.OG,
+				Url:     result,
+				SrcType: srctype.IMG_TAG,
 			}
 			th.Images = append(th.Images, image)
 		}
-	}
+	})
+}
+
+// get og:image content from site meta
+func (th *ThumbnailScraper) getOpenGraphImageFromMetaProperty() {
+	th.Bow.Dom().Find("meta").Each(func(i int, s *goquery.Selection) {
+		if result, available := s.Attr("property"); available && result == srctype.OG {
+			imgURL, available := s.Attr("content")
+			if available {
+				image := Image{
+					Url:     imgURL,
+					SrcType: srctype.OG,
+				}
+				th.Images = append(th.Images, image)
+			}
+		}
+	})
 }
