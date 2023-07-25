@@ -1,6 +1,6 @@
 package gometascraper
 
-const ImgNotFound = "Open Graph Image Not Found"
+const ImgNotFound = "Image Not Found"
 
 type ImgNotFoundError struct {
 	Message string
