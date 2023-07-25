@@ -1,7 +1,7 @@
 # 🌊 surfio
 
-Simple go-meta-scraper in Go with surf and goquery.
-scrapes thumbnail images from given site url, with dynamic crawling(using headless browser).
+Simple image scraper in Go with surf and goquery.
+Scrapes thumbnail images from given site url, with dynamic crawling(using headless browser).
 
 ## More
 
@@ -40,3 +40,7 @@ type Image struct {
 	SrcType string `json:"src_type"`
 }
 ```
+
+## Todo
+
+- [ ] Crawling Site meta (title, description, keyword...)
