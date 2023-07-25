@@ -23,3 +23,13 @@ func main() {
 	imgs, err := ts.GetThumbnailImages()
 }
 ```
+
+imgs contains Image struct. There could be multiple images.
+Primarily the scraper finds og:image for the first; if not found it will search every images available for that url and return them.
+
+```go
+type Image struct {
+	Url     string `json:"url"`
+	SrcType string `json:"src_type"`
+}
+```
