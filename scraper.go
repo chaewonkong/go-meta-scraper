@@ -51,7 +51,7 @@ func (th *ThumbnailScraper) GetThumbnailImages() (images []Image, err error) {
 }
 
 func (th *ThumbnailScraper) getAnyImageFromImgTag() {
-	th.Bow.Dom().Find("img.src").Each(func(i int, s *goquery.Selection) {
+	th.Bow.Dom().Find("img").Each(func(i int, s *goquery.Selection) {
 		if result, ok := s.Attr("src"); ok {
 			image := Image{
 				Url:     result,

@@ -3,13 +3,14 @@ package gometascraper_test
 import (
 	"testing"
 
-	thumbnailscraper "github.com/chaewonkong/thumbnail-scraper"
+	thumbnailscraper "github.com/chaewonkong/go-meta-scraper"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestGetThumbnailImagesIntegrationTest(t *testing.T) {
 	// given
 	url := "https://leonkong.cc/"
+
 	expected := thumbnailscraper.Image{Url: "/tinamn.jpg", SrcType: "og:image"}
 
 	// when
