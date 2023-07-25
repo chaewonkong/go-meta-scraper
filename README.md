@@ -1,6 +1,12 @@
-# 👍 thumbnail-scraper
+# 👍 go-meta-scraper
 
-Simple thumbnail-scraper in Go with surf and goquery.
+Simple go-meta-scraper in Go with surf and goquery.
+scrapes thumbnail images from given site url, with dynamic crawling(using headless browser).
+
+## More
+
+- [surf](https://github.com/headzoo/surf)
+- [goquery](https://github.com/PuerkitoBio/goquery)
 
 ## Usage
 
