@@ -1,4 +1,4 @@
-package gometascraper
+package surfio
 
 // Image scraped image result
 type Image struct {

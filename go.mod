@@ -1,4 +1,4 @@
-module github.com/chaewonkong/go-meta-scraper
+module github.com/chaewonkong/surfio
 
 go 1.20
 

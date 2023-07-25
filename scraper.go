@@ -1,4 +1,4 @@
-package gometascraper
+package surfio
 
 import (
 	"github.com/PuerkitoBio/goquery"

@@ -1,4 +1,4 @@
-# 🌊 go-meta-scraper
+# 🌊 surfio
 
 Simple go-meta-scraper in Go with surf and goquery.
 scrapes thumbnail images from given site url, with dynamic crawling(using headless browser).
@@ -13,14 +13,14 @@ scrapes thumbnail images from given site url, with dynamic crawling(using headle
 ```go
 package main
 
-import "github.com/chaewonkong/thumbnailscraper"
+import "github.com/chaewonkong/surfio"
 
 func main() {
 	url := [YOUR_URL]
 
 	// when
-	ts := thumbnailscraper.New(url)
-	imgs, err := ts.GetThumbnailImages()
+	su := surfio.New(url)
+	imgs, err := su.GetThumbnailImages()
 
 	if err != nil {
 		// handle error

@@ -1,4 +1,4 @@
-package gometascraper
+package surfio
 
 const ImgNotFound = "Image Not Found"
 

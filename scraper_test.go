@@ -1,9 +1,9 @@
-package gometascraper_test
+package surfio_test
 
 import (
 	"testing"
 
-	thumbnailscraper "github.com/chaewonkong/go-meta-scraper"
+	"github.com/chaewonkong/surfio"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -11,10 +11,10 @@ func TestGetThumbnailImagesIntegrationTest(t *testing.T) {
 	// given
 	url := "https://leonkong.cc/"
 
-	expected := thumbnailscraper.Image{Url: "/tinamn.jpg", SrcType: "og:image"}
+	expected := surfio.Image{Url: "/tinamn.jpg", SrcType: "og:image"}
 
 	// when
-	ts := thumbnailscraper.New(url)
+	ts := surfio.New(url)
 	imgs, err := ts.GetThumbnailImages()
 
 	// then
