@@ -1,4 +1,4 @@
-package thumbnailscraper
+package gometascraper
 
 // Image scraped image result
 type Image struct {

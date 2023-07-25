@@ -1,4 +1,4 @@
-package thumbnailscraper
+package gometascraper
 
 import (
 	"github.com/PuerkitoBio/goquery"

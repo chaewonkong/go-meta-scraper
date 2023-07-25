@@ -1,4 +1,4 @@
-package thumbnailscraper
+package gometascraper
 
 const ImgNotFound = "Open Graph Image Not Found"
 

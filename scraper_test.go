@@ -1,4 +1,4 @@
-package thumbnailscraper_test
+package gometascraper_test
 
 import (
 	"testing"
